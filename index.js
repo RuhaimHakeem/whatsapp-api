@@ -12,8 +12,6 @@ const port = 3000;
 app.post("/webhook", (req, res) => {
   let body = req.body;
 
-  console.log();
-
   // Check the Incoming webhook message
   //   console.log(JSON.stringify(req.body, null, 2));
 
@@ -30,8 +28,8 @@ app.post("/webhook", (req, res) => {
       token,
     data: {
       messaging_product: "whatsapp",
-      to: 94767860850,
-      text: { body: "Ack: " + msg_body },
+      to: "94767860850",
+      text: { body: "Ack: " + "Hello Ruhaimmmm" },
     },
     headers: { "Content-Type": "application/json" },
   });
