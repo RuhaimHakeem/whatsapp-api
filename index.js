@@ -48,24 +48,24 @@ app.post("/webhook", (req, res) => {
   }
 });
 
-app.get("/webhook", (req, res) => {
-  const verify_token = "ruhaim";
+// app.get("/webhook", (req, res) => {
+//   const verify_token = "ruhaim";
 
-  // Parse params from the webhook verification request
-  let mode = req.query["hub.mode"];
-  let token = req.query["hub.verify_token"];
-  let challenge = req.query["hub.challenge"];
+//   // Parse params from the webhook verification request
+//   let mode = req.query["hub.mode"];
+//   let token = req.query["hub.verify_token"];
+//   let challenge = req.query["hub.challenge"];
 
-  if (mode && token) {
-    // Check the mode and token sent are correct
-    if (mode === "subscribe" && token === verify_token) {
-      console.log("WEBHOOK_VERIFIED");
-      res.status(200).send("heheheh");
-    } else {
-      res.sendStatus(403);
-    }
-  }
-});
+//   if (mode && token) {
+//     // Check the mode and token sent are correct
+//     if (mode === "subscribe" && token === verify_token) {
+//       console.log("WEBHOOK_VERIFIED");
+//       res.status(200).send("heheheh");
+//     } else {
+//       res.sendStatus(403);
+//     }
+//   }
+// });
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
